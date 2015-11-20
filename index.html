@@ -21,33 +21,6 @@
     <!--[if lt IE 9]>
       <script src="http://cursor-education.github.io/style/reveal/lib/js/html5shiv.js"></script>
     <![endif]-->
-
-    <style type="text/css">
-    img.no-border {
-      border: none;
-    }
-    .reveal.overview {
-      background: #eee;
-    }
-    .reveal.overview .slides section:hover,
-    .reveal.overview .slides section.present {
-      outline-color: rgba(255, 121, 0, 0.5);
-    }
-    .reveal.overview section {
-      background: #fff;
-    }
-
-    #slide0 small {
-      color: #aaa;
-    }
-    #slide0 small a {
-      color: #aaa;
-      border-bottom: 1px #888 solid;
-    }
-    #slide0 small a:hover {
-      color: white;
-    }
-    </style>
   </head>
 
   <body>
@@ -55,11 +28,11 @@
       <div class="slides">
 
         <section
-          data-background="http://www.effectmatrix.com/total-video-converter-command-line/total-video-converter-command-line.jpg"
+          data-background="http://new.tinygrab.com/7020c0e8b0b4f6f86745b18ab55ca7deb0a4ca5c69.png"
           data-background-repeat="repeat"
           data-opacity="0.3"
-          style="background: rgba(0,0,0,0.6)"
-          id="slide0"
+          style="background: rgba(0,0,0,0.8)"
+          class="slide0-black"
         >
           <h2 style="color:white">Command Line Introduction</h2>
 
@@ -72,14 +45,192 @@
           <br/>
 
           <small style="color:#777; font-size:17px">
-            v1.0
+            v1.1
           </small>
 
           <aside class="notes">
             <pre>
-              test
+It's time to get acquainted with your command line
+and learn the commands that you'll actually need to use
             </pre>
           </aside>
+        </section>
+
+        <section style="text-align:left;">
+          <h2>Agenda</h2>
+          <p>
+            <ul>
+              <li>Shell introduction
+              <li>Basic commands http://cli.learncodethehardway.org/book/ex1.html
+              <li>Paths, Folders, Directories http://cli.learncodethehardway.org/book/ex2.html mkdir cd ls rmdir touch cp mv cat rm find
+              <li>Navigation the file system
+              <li>Manipulation (viewing and changing)
+              <li>Pipes And Redirection I/O http://cli.learncodethehardway.org/book/ex15.html
+              <li>Wildcard Matching
+              <li>Looking Inside Files (grep, select-string)
+              <li>Configuring the environment env echo
+            </ul>
+          </p>
+        </section>
+
+        <section>
+          <section>
+            <h2>Command Line Interface (CLI)</h2>
+
+            <p>
+              <ul>
+                <li>text-way to interact with PC
+                <li>Terminal on a Mac
+                <li>Command Prompt on Windows
+              </ul>
+
+              <br/>
+
+              <div>
+                <img style="float:left; width:48%; margin-right:5px;" src="https://cdn.tutsplus.com/mac/uploads/2013/06/terminal_ls-l.png" />
+
+                <img style="float:left; width:48%;" src="http://www.guidebookgallery.org/pics/gui/system/utilities/commandprompt/winnt40.png" />
+              </div>
+            </p>
+
+            <aside class="notes">
+              <pre>
+  the command line is a bit intimidating
+
+  text-only way of browsing and interacting with your computer
+  no mouse, no icons, nothing but text
+
+  DOS prompt > boot PC > C:>
+  That’s an example of the command line!
+
+  window into your computer
+              </pre>
+            </aside>
+          </section>
+
+          <section>
+            <h2>CLI: Purpose</h2>
+
+            <p>
+              <ul>
+                <li>jump between files and directories
+                <li>open stuff up
+                <li>run simple scripts
+                <li>check the status of things
+                <li>...
+              </ul>
+            </p>
+
+            <aside class="notes">
+              <pre>
+You'll become very familiar with those commands
+              </pre>
+            </aside>
+          </section>
+
+          <section>
+            <h2>What is the Command Line?</h2>
+
+            <p>
+              <small>
+                Command Line<br/>
+                Bash<br/>
+                Bourne-Again SHell<br/>
+              </small>
+
+              <br/>
+              <br/>
+
+              <img class="no-border" src="http://1.bp.blogspot.com/-y_Qcr6C4aTQ/UB5xcCxM3ZI/AAAAAAAABSk/29C-JeH68Nk/s1600/Pretty+Terminal+Mac.png" />
+            </p>
+
+            <aside class="notes">
+              <pre>
+text-based shell for controlling the computer
+
+program itself that
+gives us a window into our OS
+and lets us run commands
+
+navigate your file system
+just like you would by double clicking on folder icons in the Finder
+              </pre>
+            </aside>
+          </section>
+
+          <section>
+            <h2>Finding The Command Line</h2>
+
+            <p>
+              <ul>
+                <li><b>Windows</b>:<br/>
+                  Start button, clicking All Programs, clicking Accessories, and then clicking Command Prompt
+
+                <li><b>Mac</b>:<br/>
+                  Using CMD+SPACE, find and run a "Terminal" application
+              </ul>
+
+              <br/>
+              <br/>
+
+              <img class="no-border" src="https://viking_education.s3.amazonaws.com/web_development/prep_basics/terminal_icon_in_dock.png" />
+            </p>
+
+            <aside class="notes">
+              <pre>
+
+              </pre>
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Taking a Look Around</h2>
+            <p>
+              <pre><code data-trim contenteditable style="padding:20px">
+$ echo "hello world"&lt;enter&gt;
+$ ls -la
+$ cd My\ Folder\ Name
+              </code></pre>
+
+              Documents != documents
+            </p>
+          </section>
+
+          <section>
+            <h2>Man Pages</h2>
+            <p>
+              <pre><code data-trim contenteditable style="padding:20px">
+$ man ls
+              </code></pre>
+
+              <img style="margin-top:-40px" class="no-border" src="http://img.bhs4.com/E2/5/E25B9DE3F054B4B30B39B0D0DD5F077A04FBEE91_large.jpg" />
+            </p>
+          </section>
+
+          <section>
+            <h2>Where are we now?</h2>
+            <p>
+              <pre><code data-trim contenteditable style="padding:20px">
+$ man ls
+              </code></pre>
+
+              <img style="margin-top:-40px" class="no-border" src="http://img.bhs4.com/E2/5/E25B9DE3F054B4B30B39B0D0DD5F077A04FBEE91_large.jpg" />
+            </p>
+          </section>
+        </section>
+
+        <section>
+          <h2>Additional materials</h2>
+          <p>
+            <ul style="font-size:25px">
+              <li>
+                <b>Linux Bash Shell Cheat Sheet</b>
+                <br/>
+                <a href="http://cli.learncodethehardway.org/bash_cheat_sheet.pdf" target="_blank">http://cli.learncodethehardway.org/bash_cheat_sheet.pdf</a>
+            </ul>
+          </p>
         </section>
 
       </div>
