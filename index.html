@@ -45,7 +45,7 @@
           <br/>
 
           <small style="color:#777; font-size:17px">
-            v1.2
+            v1.4
           </small>
 
           <aside class="notes">
@@ -61,10 +61,13 @@ and learn the commands that you'll actually need to use
           <p>
             <ul>
               <li>Shell introduction
+              <li>Shell evolution
+              <li>File system organization
               <li>Basic command (Paths, Navigation, Files, etc)
               <li>Manipulation (viewing and changing)
-              <li>Pipes And Redirection
               <li>Environment variables
+              <li>Pipes And Redirection
+              <li>The Super User
             </ul>
           </p>
         </section>
@@ -73,34 +76,53 @@ and learn the commands that you'll actually need to use
           <section>
             <h2>What Is "The Shell"?</h2>
             <p>
-              program,<br/>
-              that takes commands from the keyboard,<br/>
-              perform operations,<br/>
-              gives output<br/>
+              <div style="text-align:left">
+                program,<br/>
+                that takes commands from the keyboard,<br/>
+                perform operations,<br/>
+                gives output<br/>
+              </div>
             </p>
           </section>
 
           <section>
             <h2>What's a "Terminal"?</h2>
             <p>
-              terminal emulator<br/>
-              is a program,<br/>
-              that opens a window,<br/>
-              and lets you interact with the shell<br/>
+              <div style="text-align:left">
+                terminal emulator<br/>
+                is a program,<br/>
+                that opens a window,<br/>
+                and lets you interact with the shell<br/>
+              </div>
             </p>
+          </section>
+
+          <section>
+            <h2>Philosophy</h2>
+            <p>
+              <img class="no-border" src="http://new.tinygrab.com/7020c0e8b0a6393bcb9d14dd716b501963a9bce1a2.png" />
+
+              <br/>
+
+              <ul>
+                <li>program do one thing,                
+                <li>programs works together,                
+                <li>programs handle text streams                
+              </ul>
+            </p>
+
+            <aside class="notes">
+              <pre>
+Doug McLiroy - inventor of Unix Pipes
+              </pre>
+            </aside>
           </section>
 
           <section>
             <h2>Command Line Interface (CLI)</h2>
 
             <p>
-              <ul>
-                <li>text-way to interact with PC
-                <li>Terminal on a Mac
-                <li>Command Prompt on Windows
-                <li>PowerShell on Windows
-              </ul>
-
+              text-way to interact with PC
               <br/>
 
               <div>
@@ -108,6 +130,14 @@ and learn the commands that you'll actually need to use
 
                 <img style="float:left; width:48%;" src="http://www.guidebookgallery.org/pics/gui/system/utilities/commandprompt/winnt40.png" />
               </div>
+
+              <br style="clear:both;" />
+
+              <ul style="font-size:25px">
+                <li>Terminal on a Mac
+                <li>Command Prompt on Windows
+                <li>PowerShell on Windows
+              </ul>
             </p>
 
             <aside class="notes">
@@ -171,6 +201,25 @@ and lets us run commands
 
 navigate your file system
 just like you would by double clicking on folder icons in the Finder
+              </pre>
+            </aside>
+          </section>
+
+          <section>
+            <h2>Anatomy of prompt</h2>
+
+            <p>
+              <pre><code data-trim contenteditable style="padding:20px">
+Romans-Macbook-Pro:~ somename$
+
+&lt;computer-name&gt;:&lt;current-directory&gt; &lt;username&gt;$
+&lt;computer-name&gt;:&lt;current-directory&gt; &lt;superuser&gt;#
+              </code></pre>
+            </p>
+
+            <aside class="notes">
+              <pre>
+
               </pre>
             </aside>
           </section>
@@ -627,6 +676,10 @@ Be careful with rm!
 $ cp *.txt text_files
 $ mv my_dir ../*.bak my_new_dir
 $ rm *~
+
+$ ls **/*.jpg > jpg-dir.txt
+
+$ unexisted-command 2> /dev/null
               </code></pre>
             </p>
           </section>
@@ -662,6 +715,106 @@ $ mv test.txt test2.txt
 $ rm test.txt
 
 $ cp test.txt
+              </code></pre>
+            </p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>$ alias</h2>
+            <p>
+              <pre><code data-trim contenteditable style="padding:20px">
+$ alias ll='ls -la'
+
+$ alias rmi='rm -i'
+
+$ alias cia='. /home/sydney/env/cia.sh'
+              </code></pre>
+            </p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>$ history</h2>
+            <p>
+              <pre><code data-trim contenteditable style="padding:20px">
+$ history
+
+$ !!       # recall the latest command
+$ !1003    # recall the latest command by its number
+$ !cat     # recall the latest command matching a starting string
+              </code></pre>
+            </p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>$ find</h2>
+            <p>
+              <pre><code data-trim contenteditable style="padding:20px">
+$ find . -name test.js
+
+$ find /etc -name '*.txt'
+$ find . -name '*.xml'
+$ find . -not -name '*.xml' -maxdepth
+
+$ find . -type f
+
+$ find . -mtime -1
+$ find . -mmin -15
+
+$ find . -size -1k
+              </code></pre>
+            </p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>$ grep</h2>
+            <p>
+              <u>G</u>lobal <u>R</u>egular <u>E</u>xpression <u>P</u>rint
+              <br/>
+              g/re/p
+
+              <br/>
+              <br/>
+
+              for finding text inside files
+
+              <pre><code data-trim contenteditable style="padding:20px">
+$ grep &lt;string&gt; &lt;file or directory&gt;
+
+$ grep 'some text' file.js
+$ grep something file.js
+$ grep -r 'Dao[v1|v2]' src.js
+
+$ grep -i
+              </code></pre>
+            </p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>$ sed</h2>
+            <p>
+              <img class="no-border" src="http://www.catonmat.net/blog/wp-content/uploads/2007/07/post-icon-sed.jpg" />
+            </p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>$ awk</h2>
+            <p>
+              <pre><code data-trim contenteditable style="padding:20px">
+condition { actions }
+
+$ awk 'END { print NR }' server.log
               </code></pre>
             </p>
           </section>
@@ -884,6 +1037,21 @@ $ which open
 
             </p>
           </section>
+
+          <section>
+            <h2>~/.bashrc</h2>
+            <p>
+              read each time when bash shell is started
+              <br/>
+
+              <ul>
+                <li>set default environment variables
+                <li>set custom aliases
+                <li>prompt
+                <li>a greeting message
+              </ul>
+            </p>
+          </section>
         </section>
 
         <section>
@@ -946,6 +1114,8 @@ Each program can open a lot of files
 each has a number called a file descriptor
 
 first three numbers are always reserved
+
+/dev/null /dev/zero /dev/full
               </pre>
             </aside>
           </section>
@@ -971,6 +1141,9 @@ $ cat books | grep "a"
 Carroll, Lewis:Through the Looking-Glass
 Shakespeare, William:Hamlet
 
+$ ls | wc -l
+$ ls | xargs wc -l
+
 $ ls -lt | head
 $ du | sort -nr
               </code></pre>
@@ -979,6 +1152,19 @@ $ du | sort -nr
               <pre>
 Filters
 Pipes let programs work together by connecting the output from one to be the input for another
+              </pre>
+            </aside>
+          </section>
+
+          <section>
+            <h2>Quiz</h2>
+            <p>
+              <pre><code data-trim contenteditable style="padding:20px">
+$ find . -name '*.js' | xargs wc -l | sort
+              </code></pre>
+            </p>
+            <aside class="notes">
+              <pre>
               </pre>
             </aside>
           </section>
@@ -1077,6 +1263,8 @@ no variable types
               <pre><code data-trim contenteditable style="padding:20px">
 $ sudo &lt;command&gt;
               </code></pre>
+
+              <img class="no-border" src="https://imgs.xkcd.com/comics/sandwich.png" />
             </p>
             <aside class="notes">
               <pre>
@@ -1110,6 +1298,18 @@ Password:
         </section>
 
         <section>
+          <h2>Advanced commands</h2>
+          <p>
+            <ul>
+              <li>sort
+              <li>ln
+              <li>curl
+              <li>wget
+            </ul>
+          </p>
+        </section>
+
+        <section>
           <h2>Additional materials</h2>
           <p>
             <ul style="font-size:25px">
@@ -1118,6 +1318,8 @@ Password:
                 <a href="http://cb.vu/" target="_blank">http://cb.vu/</a>
                 <br/>
                 <a href="http://bellard.org/jslinux/" target="_blank">http://bellard.org/jslinux/</a>
+                <br/>
+                <a href="http://www.tutorialspoint.com/execute_bash_online.php" target="_blank">http://www.tutorialspoint.com/execute_bash_online.php</a>
 
               <li><b>CLI Crash Course</b>
                 <br/>
