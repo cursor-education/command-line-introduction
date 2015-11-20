@@ -45,7 +45,7 @@
           <br/>
 
           <small style="color:#777; font-size:17px">
-            v1.1
+            v1.2
           </small>
 
           <aside class="notes">
@@ -61,19 +61,35 @@ and learn the commands that you'll actually need to use
           <p>
             <ul>
               <li>Shell introduction
-              <li>Basic commands http://cli.learncodethehardway.org/book/ex1.html
-              <li>Paths, Folders, Directories http://cli.learncodethehardway.org/book/ex2.html mkdir cd ls rmdir touch cp mv cat rm find
-              <li>Navigation the file system
+              <li>Basic command (Paths, Navigation, Files, etc)
               <li>Manipulation (viewing and changing)
-              <li>Pipes And Redirection I/O http://cli.learncodethehardway.org/book/ex15.html
-              <li>Wildcard Matching
-              <li>Looking Inside Files (grep, select-string)
-              <li>Configuring the environment env echo
+              <li>Pipes And Redirection
+              <li>Environment variables
             </ul>
           </p>
         </section>
 
         <section>
+          <section>
+            <h2>What Is "The Shell"?</h2>
+            <p>
+              program,<br/>
+              that takes commands from the keyboard,<br/>
+              perform operations,<br/>
+              gives output<br/>
+            </p>
+          </section>
+
+          <section>
+            <h2>What's a "Terminal"?</h2>
+            <p>
+              terminal emulator<br/>
+              is a program,<br/>
+              that opens a window,<br/>
+              and lets you interact with the shell<br/>
+            </p>
+          </section>
+
           <section>
             <h2>Command Line Interface (CLI)</h2>
 
@@ -82,6 +98,7 @@ and learn the commands that you'll actually need to use
                 <li>text-way to interact with PC
                 <li>Terminal on a Mac
                 <li>Command Prompt on Windows
+                <li>PowerShell on Windows
               </ul>
 
               <br/>
@@ -136,9 +153,9 @@ You'll become very familiar with those commands
                 Command Line<br/>
                 Bash<br/>
                 Bourne-Again SHell<br/>
+                Unix Shell<br/>
               </small>
 
-              <br/>
               <br/>
 
               <img class="no-border" src="http://1.bp.blogspot.com/-y_Qcr6C4aTQ/UB5xcCxM3ZI/AAAAAAAABSk/29C-JeH68Nk/s1600/Pretty+Terminal+Mac.png" />
@@ -159,12 +176,15 @@ just like you would by double clicking on folder icons in the Finder
           </section>
 
           <section>
-            <h2>Finding The Command Line</h2>
+            <h2>Starting A Terminal</h2>
 
             <p>
               <ul>
                 <li><b>Windows</b>:<br/>
                   Start button, clicking All Programs, clicking Accessories, and then clicking Command Prompt
+
+                <li><b>Windows</b>:<br/>
+                  Wnd+R, then write "cmd", and hit Enter
 
                 <li><b>Mac</b>:<br/>
                   Using CMD+SPACE, find and run a "Terminal" application
@@ -182,6 +202,188 @@ just like you would by double clicking on folder icons in the Finder
               </pre>
             </aside>
           </section>
+
+          <section>
+            <h2>Testing The Keyboard</h2>
+
+            <p>
+              <pre><code data-trim contenteditable style="padding:20px">
+[me@linuxbox me]$
+
+[me@linuxbox me]$ kdkjflajfks
+bash: kdkjflajfks: command not found
+              </code></pre>
+            </p>
+
+            <aside class="notes">
+              <pre>
+              </pre>
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Thompson shell (1971)</h2>
+            <p>
+              <pre><code data-trim contenteditable style="padding:20px">
+команда1&gt; команда2&gt;
+команда1 | команда2
+              </code></pre>
+            </p>
+
+            <aside class="notes">
+              <pre>
+first shell in Unix 1971 y
+              </pre>
+            </aside>
+          </section>
+
+          <section>
+            <h2>Bourne Shell (sh) (1977)</h2>
+            <p>
+              <ul>
+                <li>filters
+                <li>flow control & variables
+                <li>I/O control
+                <li>SIGNAL control
+                <li>optimizations (command-length max, etc)
+                <li>2>
+              </ul>
+            </p>
+
+            <aside class="notes">
+              <pre>
+Unix 7, 1977
+AT&T
+/bin/sh
+скриптова мова
+              </pre>
+            </aside>
+          </section>
+
+          <section>
+            <h2>Bourne again shell (bash) (1987)</h2>
+            <p>
+              <pre><code data-trim contenteditable style="padding:20px">
+#!/bin/bash
+echo Hello World!
+              </code></pre>
+            </p>
+
+            <aside class="notes">
+              <pre>
+
+              </pre>
+            </aside>
+          </section>
+
+          <section>
+            <h2>Korn-shell (ksh) (1983)</h2>
+            <p>
+              <img class="no-border" src="https://upload.wikimedia.org/wikipedia/commons/1/16/OpenBSD_ksh_Interaction.png" />
+            </p>
+
+            <aside class="notes">
+              <pre>
+over bash
+1983
+Devid Korn AT&T
+              </pre>
+            </aside>
+          </section>
+
+          <section>
+            <h2>TENEX C Shell (tcsh)</h2>
+            <p>
+              <img class="no-border" src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Tcsh_screenshot.png?uselang=ru" />
+            </p>
+
+            <aside class="notes">
+              <pre>
+over bash
+Can Greag AT&T
+autocompl (tab)
+spellchecking
+events
+last update 2012
+              </pre>
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>File system (Windows)</h2>
+            <p>
+              <img class="no-border" src="https://dvanderboom.files.wordpress.com/2008/03/filesystemtree.png" />
+            </p>
+            <aside class="notest">
+              <pre>
+hierarchical directory structure
+              </pre>
+            </aside>
+          </section>
+
+          <section>
+            <h2>File system (Unix)</h2>
+            <p>
+              <img class="no-border" src="http://linuxcommand.org/images/file_manager.jpg" />
+            </p>
+          </section>
+
+          <section>
+            <h2>File system (Unix)</h2>
+            <p>
+              <img class="no-border" src="http://www.openbookproject.net/tutorials/getdown/unix/images/lesson2/UnixDirectoryTree.png" />
+            </p>
+          </section>
+
+          <section>
+            <h2>File system (Unix): A Guided Tour</h2>
+            <p>
+              <table style="font-size:28px">
+              <tbody>
+                <tr>
+                  <td>/</td>
+                  <td>the root directory</td>
+                </tr>
+                <tr>
+                  <td>/boot</td>
+                  <td>Linux kernel and boot loader files</td>
+                </tr>
+                <tr>
+                  <td>/etc</td>
+                  <td>the configuration files for the system</td>
+                </tr>
+                <tr>
+                  <td>/bin, /usr/bin</td>
+                  <td>contain most of the programs for the system</td>
+                </tr>
+                <tr>
+                  <td>/sbin, /usr/sbin</td>
+                  <td>programs for system administration</td>
+                </tr>
+                <tr>
+                  <td>/usr</td>
+                  <td>variety of things that support user applications</td>
+                </tr>
+                <tr>
+                  <td>/var</td>
+                  <td>contains files that change as the system is running (/var/log)</td>
+                </tr>
+                <tr>
+                  <td>/home</td>
+                  <td>users keep their personal work</td>
+                </tr>
+                <tr>
+                  <td>/tmp</td>
+                  <td>for temporary files</td>
+                </tr>
+              </tbody>
+              </table>
+            </p>
+          </section>
         </section>
 
         <section>
@@ -189,12 +391,110 @@ just like you would by double clicking on folder icons in the Finder
             <h2>Taking a Look Around</h2>
             <p>
               <pre><code data-trim contenteditable style="padding:20px">
+$ command -options arguments
+              </code></pre>
+
+              <pre><code data-trim contenteditable style="padding:20px">
 $ echo "hello world"&lt;enter&gt;
 $ ls -la
 $ cd My\ Folder\ Name
               </code></pre>
 
               Documents != documents
+            </p>
+          </section>
+
+          <section>
+            <h2>$ pwd</h2>
+            <p>
+              <pre><code data-trim contenteditable style="padding:20px">
+[me@linuxbox me]$ pwd
+/home/me
+              </code></pre>
+            </p>
+          </section>
+
+          <section>
+            <h2>$ ls</h2>
+            <p>
+              <pre><code data-trim contenteditable style="padding:20px">
+[me@linuxbox me]$ ls
+
+Desktop     Xrootenv.0    linuxcmd
+GNUstep     bin           nedit.rpm
+GUILG00.GZ  hitni123.jpg  nsmail
+              </code></pre>
+            </p>
+          </section>
+
+          <section>
+            <h2>$ ls</h2>
+            <p>
+              <pre><code data-trim contenteditable style="padding:20px">
+$ ls
+$ ls /bin
+$ ls -l
+$ ls -l /etc /bin
+$ ls -la ..
+              </code></pre>
+            </p>
+          </section>
+
+          <section>
+            <h2>$ cd</h2>
+            <p>
+              <pre><code data-trim contenteditable style="padding:20px">
+[me@linuxbox me]$ cd /usr/bin
+[me@linuxbox bin]$ pwd
+/usr/bin [me@linuxbox bin]$ ls
+
+[                     lwp-request
+2to3                  lwp-rget
+2to3-2.6              lxterm
+a2p                   lz
+aalib-config          lzcat
+aconnect              lzma
+acpi_fakekey          lzmadec
+acpi_listen           lzmainfo
+add-apt-repository    m17n-db
+addpart               magnifier
+
+and many more...
+              </code></pre>
+            </p>
+          </section>
+
+          <section>
+            <h2>$ file</h2>
+            <p>
+              <pre><code data-trim contenteditable style="padding:20px">
+[me@linuxbox me]$ file &lt;name_of_file&gt;
+              </code></pre>
+            </p>
+          </section>
+
+          <section>
+            <h2>Basic commands (Unix)</h2>
+            <p>
+              <pre><code data-trim contenteditable style="padding:20px">
+$ pwd
+$ hostname
+$ mkdir
+$ cd
+$ ls
+$ rmdir
+$ cp
+$ mv
+$ cat
+$ find
+$ grep
+$ man
+$ env
+$ echo
+$ exit
+$ sudo
+$ chmod / chown
+              </code></pre>
             </p>
           </section>
 
@@ -210,14 +510,602 @@ $ man ls
           </section>
 
           <section>
+            <h2>What is your computer name?</h2>
+            <p>
+              <pre><code data-trim contenteditable style="padding:20px">
+$ hostname
+Zeds-MacBook-Pro.local
+              </code></pre>
+            </p>
+          </section>
+
+          <section>
             <h2>Where are we now?</h2>
             <p>
               <pre><code data-trim contenteditable style="padding:20px">
+$ pwd      # Your Current Directory
+/Users/zedshaw
+
+$ ls       # View Directory Contents
+$ ls &lt;directory-name&gt;
+$ ls -la 
+$ ls -la .
+$ ls -la *.txt
+
+$ open .   # Open a file/directory
+              </code></pre>
+            </p>
+          </section>
+
+          <section>
+            <h2>Manipulating with patterns</h2>
+            <p>
+              <table>
+                <tr>
+                  <td>*</td>
+                  <td>everything</td>
+                </tr>
+                <tr>
+                  <td>g*</td>
+                  <td>everything that begins with character "g"</td>
+                </tr>
+                <tr>
+                  <td>b*.txt</td>
+                  <td>begins with "b", and ends with ".txt"</td>
+                </tr>
+                <tr>
+                  <td>Data???</td>
+                  <td>begins with the characters "Data" followed by exactly 3 more characters</td>
+                </tr>
+                <tr>
+                  <td>[abc]*</td>
+                  <td>begins with "a" or "b" or "c" followed by any other characters</td>
+                </tr>
+              </table>
+            </p>
+          </section>
+
+          <section>
+            <h2>Directories</h2>
+            <p>
+              <pre><code data-trim contenteditable style="padding:20px">
+~/Documents/some_folder/some_other_folder/some_file.tx
+
+. = root
+.. = up
+~ = home directory
+              </code></pre>
+            </p>
+          </section>
+
+          <section>
+            <h2>$ cp</h2>
+            <p>
+              <pre><code data-trim contenteditable style="padding:20px">
+[me@linuxbox me]$ cp file1 file2
+[me@linuxbox me]$ cp file... directory
+              </code></pre>
+            </p>
+          </section>
+
+          <section>
+            <h2>$ mv</h2>
+            <p>
+              <pre><code data-trim contenteditable style="padding:20px">
+[me@linuxbox me]$ mv filename1 filename2
+[me@linuxbox me]$ mv file... directory
+              </code></pre>
+            </p>
+          </section>
+
+          <section>
+            <h2>$ rm</h2>
+            <p>
+              <pre><code data-trim contenteditable style="padding:20px">
+[me@linuxbox me]$ rm file...
+[me@linuxbox me]$ rm -r directory...
+
+Be careful with rm!
+[me@linuxbox me]$ rm -rf /
+              </code></pre>
+            </p>
+          </section>
+
+          <section>
+            <h2>$ mkdir</h2>
+            <p>
+              <pre><code data-trim contenteditable style="padding:20px">
+[me@linuxbox me]$ mkdir directory...
+              </code></pre>
+            </p>
+          </section>
+
+          <section>
+            <h2>Quiz</h2>
+            <p>
+              <pre><code data-trim contenteditable style="padding:20px">
+$ cp *.txt text_files
+$ mv my_dir ../*.bak my_new_dir
+$ rm *~
+              </code></pre>
+            </p>
+          </section>
+
+          <section>
+            <h2>Directories: Let's Move Around</h2>
+            <p>
+              <pre><code data-trim contenteditable style="padding:20px">
+$ pwd
+
+$ cd &lt;folder-name&gt;
+
+$ cd ..
+$ cd ~
+              </code></pre>
+            </p>
+          </section>
+
+          <section>
+            <h2>Let's Make, View and Destroy Stuff</h2>
+            <p>
+              <pre><code data-trim contenteditable style="padding:20px">
+$ mkdir some/folder
+$ mkdir -p some/folder/
+
+$ touch test.txt
+
+$ open test.txt
+
+$ cat test.txt
+
+$ mv test.txt test2.txt
+$ rm test.txt
+
+$ cp test.txt
+              </code></pre>
+            </p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Working With Commands</h2>
+            <p>
+              <pre><code data-trim contenteditable style="padding:20px">
+# Display information about command type
+# (executable, built-in shell, function, alias)
+$ type cp
+cp is /bin/cp
+
+# Locate a command
+$ which ls
+/bin/ls
+
+# Display reference page for shell builtin
+$ help -m cd
+...
+
+# Display an on-line command reference
 $ man ls
+...
+              </code></pre>
+            </p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Permissions</h2>
+            <p>
+              <pre><code data-trim contenteditable style="padding:20px">
+$ ls -l
+total 72
+# Permissions  Links  Owner  Group  Size  Modification  File Name
+drwxr-xr-x   2 root root  4096 Oct  5 09:31 bin
+drwxr-xr-x   3 root root  4096 Oct  9 21:47 boot
+drwxr-xr-x   1 root root     0 Jan  1  1970 dev
+...
               </code></pre>
 
-              <img style="margin-top:-40px" class="no-border" src="http://img.bhs4.com/E2/5/E25B9DE3F054B4B30B39B0D0DD5F077A04FBEE91_large.jpg" />
             </p>
+            <aside class="notes">
+              <pre>
+set of file attributes you'll run into, though, is permissions
+
+Every file and directory in the system has an owner,
+belongs to a group
+and has a set of permissions
+              </pre>
+            </aside>
+          </section>
+
+          <section>
+            <h2>Permissions: explanation</h2>
+            <p>
+              <div style="text-align:left;">
+                <b><u>d</u>rwxr-xr-x</b>
+                <br/>
+
+                d - type of file (<b>-</b> regular file, <b>d</b> directoty, <b>l</b> symbolic link, etc)
+              </div>
+            </p>
+            <aside class="notes">
+              <pre>
+              </pre>
+            </aside>
+          </section>
+
+          <section>
+            <h2>Permissions: types</h2>
+            <p>
+              <div style="text-align:left;">
+                <b>d<u>rwxr-xr-x</u></b>
+                
+                <br/>
+                <br/>
+                
+                <ul>
+                  <li>Read (r) - see the contents of a file
+                  <li>Write (w) - modify its contents
+                  <li>Execute (x) - you wish to run it (the file is a program)
+                  <li>Anything (-)
+                </ul>
+
+                <br/>
+                <br/>
+
+                <pre><code data-trim contenteditable style="padding:20px">
+:type : owner : group : restofworld:
+:d    : rwx   : r-x   : r-x
+                </code></pre>
+              </div>
+
+            </p>
+            <aside class="notes">
+              <pre>
+              </pre>
+            </aside>
+          </section>
+
+          <section>
+            <h2>Who are you?</h2>
+            <p>
+              <div style="text-align:left;">
+                <pre><code data-trim contenteditable style="padding:20px">
+$ whoami
+joe
+
+$ id -G -n
+                </code></pre>
+              </div>
+            </p>
+            <aside class="notes">
+              <pre>
+              </pre>
+            </aside>
+          </section>
+
+          <section>
+            <h2>Permissions: to Octal notation</h2>
+            <p>
+              <img class="no-border" src="http://en.flossmanuals.net/command-line/permissions/_booki/command-line/static/CommandLineIntro-octal_notation-en.png" />
+            </p>
+            <aside class="notes">
+              <pre>
+              </pre>
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Exit status</h2>
+            <p>
+              <b>$?</b> = from 0 to 255
+              <br/>
+
+              <b>zero</b> = success
+              <br/>
+
+              <pre><code data-trim contenteditable style="padding:20px">
+$ echo "this works fine"
+this works fine
+$ echo $?
+0
+$ hhhhhh
+bash: hhhhhh: command not found
+$ echo $?
+127
+              </code></pre>
+            </p>
+            <aside class="notes">
+              <pre>
+When you type commands
+print an error message
+              </pre>
+            </aside>
+          </section>
+
+          <section>
+            <h2>Exit status: examples</h2>
+            <p>
+              <b>126</b> = permission denied
+              <br/>
+
+            </p>
+            <aside class="notes">
+              <pre>
+              </pre>
+            </aside>
+          </section>
+        </section>
+
+
+        <section>
+          <section>
+            <h2>Environment Variables and $PATH</h2>
+            <p>
+              <pre><code data-trim contenteditable style="padding:20px">
+$ printenv
+              </code></pre>
+            </p>
+          </section>
+
+          <section>
+            <h2>Environment Variables (Windows)</h2>
+            <p>
+              <img class="no-border" width="70%" src="http://www.mandsconsulting.com/wp-content/uploads/windows_environment_variables.png" />
+            </p>
+          </section>
+
+          <section>
+            <h2>Environment Variables (Unix)</h2>
+            <p>
+              <pre><code data-trim contenteditable style="padding:20px">
+# In ~/.bash_profile
+export MYSQL_DIR=/usr/local/mysql/bin
+PATH=$MYSQL_DIR:$PATH
+              </code></pre>
+            </p>
+          </section>
+
+          <section>
+            <h2>Environment Variables: find location</h2>
+            <p>
+              <pre><code data-trim contenteditable style="padding:20px">
+$ which open
+              </code></pre>
+            </p>
+          </section>
+
+          <section>
+            <h2>~/.bash_profile</h2>
+            <p>
+
+            </p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>&& and ||</h2>
+            <p>
+              <pre><code data-trim contenteditable style="padding:20px">
+$ command1 && command2 [&& command3]...
+$ command1 || command2 || command3 || ...
+
+$ command1 && command2 || command3
+              </code></pre>
+            </p>
+            <aside class="notes">
+              <pre>
+              </pre>
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Chaining Commands Together, Redirection and Piping</h2>
+            <p>
+
+            </p>
+            <aside class="notes">
+              <pre>
+              </pre>
+            </aside>
+          </section>
+
+          <section>
+            <h2>I/O Redirection</h2>
+            <p>
+              <div style="font-size:20px;">
+                stdin = 0<br/>
+                stdout = 1<br/>
+                stderr = 2<br/>
+              </div>
+
+              <pre><code data-trim contenteditable style="padding:20px">
+$ ls > my-file-list
+$ ls >> my-file-list
+
+$ sort < my-file-list
+
+$ ls *.bak > listfile
+
+$ ls /nosuchplace > /dev/null
+ls: /nosuchplace: No such file or directory
+
+$ ls /nosuchplace 2>/tmp/errors
+$
+              </code></pre>
+            </p>
+            <aside class="notes">
+              <pre>
+Each program can open a lot of files
+each has a number called a file descriptor
+
+first three numbers are always reserved
+              </pre>
+            </aside>
+          </section>
+
+          <section>
+            <h2>Quiz</h2>
+            <p>
+              <pre><code data-trim contenteditable style="padding:20px">
+$ sort < file_list.txt > sorted_file_list.txt
+              </code></pre>
+            </p>
+            <aside class="notes">
+              <pre>
+              </pre>
+            </aside>
+          </section>
+
+          <section>
+            <h2>Pipelines</h2>
+            <p>
+              <pre><code data-trim contenteditable style="padding:20px">
+$ cat books | grep "a"
+Carroll, Lewis:Through the Looking-Glass
+Shakespeare, William:Hamlet
+
+$ ls -lt | head
+$ du | sort -nr
+              </code></pre>
+            </p>
+            <aside class="notes">
+              <pre>
+Filters
+Pipes let programs work together by connecting the output from one to be the input for another
+              </pre>
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Bash Scripting</h2>
+            <p>
+              <pre><code data-trim contenteditable style="padding:20px">
+#!/bin/bash
+$ whereis bash
+              </code></pre>
+            </p>
+          </section>
+
+          <section>
+            <h2>Bash Scripting: Variables</h2>
+            <p>
+              <pre><code data-trim contenteditable style="padding:20px">
+#!/bin/bash
+parametr1=$1
+script_name=$0
+echo "welcome to $script_name"
+echo 'welcome to $script_name'
+exit 0
+              </code></pre>
+
+              <pre><code data-trim contenteditable style="padding:20px">
+user@desktop:~$ ./test1.sh param1
+              </code></pre>
+            </p>
+
+            <aside class="notes">
+              <pre>
+no variable types
+              </pre>
+            </aside>
+          </section>
+
+          <section>
+            <h2>Bash Scripting: Conditions</h2>
+            <p>
+              <pre><code data-trim contenteditable style="padding:20px">
+if
+  &lt;command>
+then
+  &lt;commands-if-successful>
+else
+  &lt;commands-if-failed>
+fi
+              </code></pre>
+            </p>
+
+            <aside class="notes">
+              <pre>
+
+              </pre>
+            </aside>
+          </section>
+
+          <section>
+            <h2>Bash Scripting: Conditions</h2>
+            <p>
+              <pre><code data-trim contenteditable style="padding:20px">
+#!/bin/bash
+source=$1
+dest=$2
+
+if [[ "$source" -eq "$dest" ]] then
+  echo "some1"
+  exit 1
+else
+  echo "some2"
+  exit 2
+endif
+              </code></pre>
+
+              <pre><code data-trim contenteditable style="padding:20px">
+user@desktop:~$ ./test2.sh 1 2
+              </code></pre>
+            </p>
+
+            <aside class="notes">
+              <pre>
+no variable types
+              </pre>
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>The Super User</h2>
+            <p>
+              <pre><code data-trim contenteditable style="padding:20px">
+$ sudo &lt;command&gt;
+              </code></pre>
+            </p>
+            <aside class="notes">
+              <pre>
+Some files on the computer are protected
+who has the power to do anything
+
+administrator password
+              </pre>
+            </aside>
+          </section>
+
+          <section>
+            <h2>Becoma a Super User</h2>
+            <p>
+              <pre><code data-trim contenteditable style="padding:20px">
+[me@linuxbox me]$ su
+Password:
+
+[root@linuxbox me]# chown you some_file
+[root@linuxbox me]# exit
+
+[me@linuxbox me]$
+              </code></pre>
+            </p>
+            <aside class="notes">
+              <pre>
+
+              </pre>
+            </aside>
           </section>
         </section>
 
@@ -225,10 +1113,32 @@ $ man ls
           <h2>Additional materials</h2>
           <p>
             <ul style="font-size:25px">
+              <li><b>Online examples of Shell</b>
+                <br/>
+                <a href="http://cb.vu/" target="_blank">http://cb.vu/</a>
+                <br/>
+                <a href="http://bellard.org/jslinux/" target="_blank">http://bellard.org/jslinux/</a>
+
+              <li><b>CLI Crash Course</b>
+                <br/>
+                <a href="http://cli.learncodethehardway.org/book/" target="_blank">http://cli.learncodethehardway.org/book/</a>
+
               <li>
                 <b>Linux Bash Shell Cheat Sheet</b>
                 <br/>
                 <a href="http://cli.learncodethehardway.org/bash_cheat_sheet.pdf" target="_blank">http://cli.learncodethehardway.org/bash_cheat_sheet.pdf</a>
+                <br/>
+                <a href="http://ss64.com/" target="_blank">http://ss64.com/</a>
+
+              <li>
+                <b>Advanced Bash-Scripting Guide</b>
+                <br/>
+                <a href="http://www.tldp.org/LDP/abs/abs-guide.pdf" target="_blank">http://www.tldp.org/LDP/abs/abs-guide.pdf</a>
+
+              <li>
+                <b>Writing a Bash Scripts</b>
+                <br/>
+                <a href="http://linuxcommand.org/lc3_writing_shell_scripts.php" target="_blank">http://linuxcommand.org/lc3_writing_shell_scripts.php</a>
             </ul>
           </p>
         </section>
